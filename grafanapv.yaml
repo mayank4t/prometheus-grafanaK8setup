@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    chart: prometheus-11.12.1
+    component: server
+    heritage: Helm
+    release: prometheus
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 16Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data"
