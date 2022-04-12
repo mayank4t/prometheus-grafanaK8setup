@@ -22,6 +22,6 @@ kubectl create prometheuspv.yaml --namespace prometheus
 kubectl create ns grafana
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafana.values
 helm install grafana stable/grafana --values grafana.values --namespace grafana
-wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafana.yaml
-kubectl create grafana.yaml --namespace grafana
+wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafanapv.yaml
+kubectl create grafanapv.yaml --namespace grafana
 clear
