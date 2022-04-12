@@ -17,5 +17,7 @@ yum install wget -y
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheus.values
 kubectl create ns prometheus
 helm install prometheus stable/prometheus --values prometheus.values --namespace prometheus
+wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheuspv.yaml
+kubectl create prometheuspv.yaml --namespace prometheus
 
 
