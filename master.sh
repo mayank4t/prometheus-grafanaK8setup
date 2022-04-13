@@ -1,4 +1,3 @@
-sudo -s
 yum install nfs-utils -y
 mkdir /data
 chmod -R 755 /data
