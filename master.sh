@@ -5,7 +5,7 @@ chmod -R 755 /data
 chown nfsnobody:nfsnobody /data
 systemctl enable nfs-server
 systemctl start nfs-server
-/data *(rw,sync,no_subtree_check,no_root_squash,insecure)
+echo "/data *(rw,sync,no_subtree_check,no_root_squash,insecure)" >> /etc/exports
 yum install openssl -y
 export PATH=$PATH:/usr/local/bin
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
