@@ -2,16 +2,24 @@
 
 This repo will help with the configuration of prometheus and grafana in the Kubernetes cluster, 
 
-Steps :- 
+Prerequisite: -
+Considering Cluster is already configured with masternode hostname as "master"
+To configure check:- https://github.com/mayank4t/kubernetessetup
 
-Copy master.sh to your host
+NFS mount :- /data
 
-Grant permission chmod +x master.sh
-sh master.sh
+Download master.sh in cloudshell or on kubernetes master instance
+from cloud shell:-
+"gcloud compute ssh --zone $zone "$instance"  --project $project --command "sudo sh master.sh" 
 
-Copy worker.sh to your worker host
-modify IP of NFS server
-chmod +x worker.sh
+from kubernetes master node:-
+chmomd +x master.sh
+./master.sh
 
-sh worker.sh
+Download worker.sh in cloudshell or on all expected workernodes
+
+from Cloud shell :-
+"gcloud compute ssh --zone $zone "$instance"  --project $project --command "sudo sh worker.sh" 
+chmomd +x worker.sh
+./worker.sh
 
