@@ -21,6 +21,8 @@ Download worker.sh in cloudshell or on all expected workernodes
 from Cloud shell :-
 
 "gcloud compute ssh --zone $zone "$instance"  --project $project --command "sudo sh worker.sh" 
+
+from Workernodes
 chmomd +x worker.sh
 ./worker.sh
 
