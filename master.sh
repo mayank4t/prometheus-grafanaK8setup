@@ -13,7 +13,7 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 export KUBECONFIG=/etc/kubernetes/admin.conf
-helm repo add stable https //charts.helm.sh/stable
+helm repo add stable https://charts.helm.sh/stable
 yum install wget -y
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheus.values
 kubectl create ns prometheus
