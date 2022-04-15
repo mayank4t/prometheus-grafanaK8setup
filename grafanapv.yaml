@@ -5,9 +5,10 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: Helm
     chart: prometheus-11.12.1
-    component: server
+    component: alertmanager
     heritage: Helm
     release: prometheus
+    app=prometheus
 spec:
   storageClassName: ""
   capacity:
