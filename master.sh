@@ -15,12 +15,11 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 helm repo add stable https://charts.helm.sh/stable
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheus.values
 kubectl create ns prometheus
-helm install prometheus stable/prometheus --values prometheus.values --namespace prometheus
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheuspv.yaml
 kubectl create -f prometheuspv.yaml --namespace prometheus
+wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheus-alertmanager.yaml
+kubectl create -f grafanapv.yaml --namespace prometheus
+helm install prometheus stable/prometheus --values prometheus.values --namespace prometheus
 kubectl create ns grafana
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafana.values
 helm install grafana stable/grafana --values grafana.values --namespace grafana
-wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafanapv.yaml
-kubectl create -f grafanapv.yaml --namespace grafana
-clear
