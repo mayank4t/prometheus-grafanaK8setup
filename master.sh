@@ -18,7 +18,7 @@ kubectl create ns prometheus
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheuspv.yaml
 kubectl create -f prometheuspv.yaml --namespace prometheus
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/prometheus-alertmanager.yaml
-kubectl create -f grafanapv.yaml --namespace prometheus
+kubectl create -f prometheus-alertmanager.yaml --namespace prometheus
 helm install prometheus stable/prometheus --values prometheus.values --namespace prometheus
 kubectl create ns grafana
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafana.values
