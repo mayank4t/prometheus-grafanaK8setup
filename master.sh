@@ -3,6 +3,7 @@ if [ ! -f "$FILE" ]; then
     read -r -p "please provide grafana admin user password :- " password
 else 
   password=$(cat /tmp/password) ;
+  rm -rf /tmp/password
 fi
 yum install openssl nfs-utils wget -y
 mkdir /data
