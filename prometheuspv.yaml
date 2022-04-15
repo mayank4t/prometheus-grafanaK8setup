@@ -4,6 +4,7 @@ metadata:
   name: prometheus-server
   labels:
     app.kubernetes.io/managed-by: Helm
+    app: prometheus
     chart: prometheus-11.12.1
     component: server
     heritage: Helm
