@@ -3,12 +3,12 @@ kind: PersistentVolume
 metadata:
   name: prometheus-alertmanager
   labels:
+    app: prometheus
     app.kubernetes.io/managed-by: Helm
     chart: prometheus-11.12.1
     component: alertmanager
     heritage: Helm
     release: prometheus
-    app=prometheus
 spec:
   storageClassName: ""
   capacity:
