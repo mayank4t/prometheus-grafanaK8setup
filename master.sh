@@ -1,3 +1,9 @@
+FILE=/tmp/password
+if [ ! -f "$FILE" ]; then
+    read -r -p "please provide grafana admin user password :- " password
+else 
+  password=$(cat /tmp/password) ;
+fi
 yum install openssl nfs-utils wget -y
 mkdir /data
 chmod -R 755 /data
@@ -22,7 +28,6 @@ kubectl create -f prometheus-alertmanager.yaml --namespace prometheus
 helm install prometheus stable/prometheus --values prometheus.values --namespace prometheus
 kubectl create ns grafana
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafana.values
-password=$(cat /tmp/password)
 sed -i 's/strongpassword/$password/g' grafana.values
 helm install grafana stable/grafana --values grafana.values --namespace grafana
 wget https://raw.githubusercontent.com/mayank4t/prometheus-grafanaK8setup/main/grafanapv.yaml
